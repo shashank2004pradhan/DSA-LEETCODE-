@@ -1,32 +1,28 @@
+#include <cctype> // ✅ Needed for isalnum() and tolower()
+
 class Solution {
 public:
-
-// ✅ Optimization: Avoid calling tolower() multiple times for the same char
-bool isAlphanum(char ch){
-    if((ch >= '0' && ch <= '9') || (ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z')){ // ✅ Fixed: avoid redundant tolower calls
-        return true;
-    }
-    return false;
-}
 
     bool isPalindrome(string s) {
         int st = 0;
         int e = s.size() - 1;
 
-        while(st < e){
-            // skip non-alphanumeric chars
-            if(!isAlphanum(s[st])){
-                st++; continue; // ✅ Fixed: comma operator is invalid, replaced with semicolon
+        while (st < e) {
+            // ✅ Replaced custom isAlphanum with standard isalnum
+            if (!isalnum(s[st])) {
+                st++;
+                continue;
             }
-            if(!isAlphanum(s[e])){
-                e--; continue; // ✅ Fixed: same as above
+            if (!isalnum(s[e])) {
+                e--;
+                continue;
             }
 
-            // ✅ Optimization: store tolower result to avoid recomputation
+            // ✅ Optimization: store tolower results to avoid recomputation
             char c1 = tolower(s[st]);
             char c2 = tolower(s[e]);
 
-            if(c1 != c2){
+            if (c1 != c2) {
                 return false;
             }
 
