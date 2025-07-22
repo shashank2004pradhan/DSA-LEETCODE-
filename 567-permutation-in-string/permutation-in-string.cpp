@@ -1,44 +1,31 @@
 class Solution {
 public:
-
-bool isFreqSame(int freq1[],int freq2[]){
-    for(int i=0;i<26;i++){
-        if(freq1[i] != freq2[i]){
-            return false;
+    bool isFreqSame(int freq1[], int freq2[]) {
+        for(int i = 0; i < 26; i++) {
+            if(freq1[i] != freq2[i]) return false;
         }
+        return true;
     }
-    return true;
-}
-    bool checkInclusion(string s1, string s2) {
-        int freq[26]={0};
 
-        for(int i=0;i<s1.length();i++){
-            freq[s1[i] - 'a']++;
+    bool checkInclusion(string s1, string s2) {
+        if (s1.length() > s2.length()) return false; // ✅ edge case check
+
+        int freq[26] = {0};
+        for(int i = 0; i < s1.length(); i++) {
+            freq[s1[i] - 'a']++; // ✅ safe since input is lowercase
         }
 
         int windSize = s1.length();
 
-        for(int i =0;i<s2.length();i++){
-            int windIdx = 0;
-            int idx = i;
+        for(int i = 0; i <= s2.length() - windSize; i++) {
             int windFreq[26] = {0};
-
-            while(windIdx < windSize && idx < s2.length()){
-                windFreq[s2[idx]-'a']++;
-                windIdx++;
-                idx++;
+            for(int j = 0; j < windSize; j++) {
+                windFreq[s2[i + j] - 'a']++; // ✅ safe if s2 is lowercase
             }
 
-            if(isFreqSame(freq,windFreq)){
-                return true;
-            }
-
-
-
-
-
+            if(isFreqSame(freq, windFreq)) return true;
         }
+
         return false;
-        
     }
 };
