@@ -3,7 +3,10 @@ public:
     string removeOccurrences(string s, string part) {
         while( s.length()>0 && s.find(part) < s.length() ){
             
-           //s.erase(i, len)  s.erase(s.find(part),part.length());
+           //s.erase(i, len)  
+
+
+s.erase(s.find(part),part.length());
         }
         return s;
         
