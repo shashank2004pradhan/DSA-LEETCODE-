@@ -29,12 +29,16 @@ public:
         }
 
         s = head;
+        ListNode* prev = NULL;
+
 
         while( s!=f){
             s = s->next;
+            prev =f;
             f = f->next;
 
         }
+      //
         return s;
         
     }
