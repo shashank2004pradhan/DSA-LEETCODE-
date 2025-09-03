@@ -10,19 +10,18 @@
  */
 class Solution {
 public:
-    ListNode* mergeTwoLists(ListNode* h1, ListNode* h2) {
-        if(h1==NULL || h2 == NULL){
-            return h1 ==NULL ? h2:h1;
+    ListNode* mergeTwoLists(ListNode* head1, ListNode* head2) {
+
+        if(head1 == NULL || head2 == NULL){
+            return head1 == NULL ? head2 : head1;
         }
 
-        //case1
-        if(h1->val <= h2->val){
-            h1->next = mergeTwoLists(h1->next,h2);
-            return h1;
+        if(head1->val <= head2->val){
+            head1->next = mergeTwoLists(head1->next,head2);
+            return head1;
         }else{
-             h2->next = mergeTwoLists(h1,h2->next);
-            return h2;
-
+            head2->next = mergeTwoLists(head1,head2->next);
+            return head2;
         }
         
     }
