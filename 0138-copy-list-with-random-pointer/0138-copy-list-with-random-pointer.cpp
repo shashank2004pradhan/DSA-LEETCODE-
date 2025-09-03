@@ -17,39 +17,39 @@ public:
 class Solution {
 public:
     Node* copyRandomList(Node* head) {
-        
         if(!head){
             return NULL;
         }
 
+        unordered_map<Node*,Node*> m;
 
-        unordered_map<Node*,Node*>m;
-        //initialize variables
+        //initialize pointers
         Node* newHead = new Node(head->val);
         Node* oldTemp = head->next;
         Node* newTemp = newHead;
-        m[head]= newHead;
-       
-        //make connections
+        m[head] = newHead;
+
+        //copy the ll without random connections
+
         while(oldTemp != NULL){
             Node* copyNode = new Node(oldTemp->val);
             m[oldTemp] = copyNode;
-
             newTemp->next = copyNode;
+
+
             oldTemp = oldTemp->next;
             newTemp = newTemp->next;
         }
-        //random connections
-         oldTemp = head;
-        newTemp = newHead;
+
+        oldTemp = head; newTemp = newHead;
+
         while(oldTemp != NULL){
-            newTemp->random = m[oldTemp->random];
-            oldTemp = oldTemp->next;
-            newTemp = newTemp->next;
+            newTemp ->random = m[oldTemp->random];
+            oldTemp = oldTemp -> next;
+            newTemp = newTemp -> next;
+
         }
         return newHead;
-
-
 
         
     }
