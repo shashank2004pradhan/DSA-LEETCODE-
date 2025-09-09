@@ -11,7 +11,8 @@
 class Solution {
 public:
     ListNode* swapPairs(ListNode* head) {
-        if(head==NULL || head->next ==NULL){
+        //base Case
+        if(head ==NULL || head->next == NULL){
             return head;
         }
 
@@ -33,13 +34,26 @@ public:
             prev = fir;
             fir = third;
             if(third != NULL){
-               sec = third->next; 
+                sec = third->next;
             }else{
                 sec = NULL;
             }
-            
         }
 
-        return head;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     return head;   
     }
 };
