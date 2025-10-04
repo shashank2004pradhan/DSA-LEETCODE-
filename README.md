@@ -36,4 +36,12 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0766-flatten-a-multilevel-doubly-linked-list](https://github.com/shashank2004pradhan/DSA-LEETCODE-/tree/master/0766-flatten-a-multilevel-doubly-linked-list) |
+## String
+|  |
+| ------- |
+| [0020-valid-parentheses](https://github.com/shashank2004pradhan/DSA-LEETCODE-/tree/master/0020-valid-parentheses) |
+## Stack
+|  |
+| ------- |
+| [0020-valid-parentheses](https://github.com/shashank2004pradhan/DSA-LEETCODE-/tree/master/0020-valid-parentheses) |
 <!---LeetCode Topics End-->
