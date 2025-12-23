@@ -57,4 +57,12 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0937-online-stock-span](https://github.com/shashank2004pradhan/DSA-LEETCODE-/tree/master/0937-online-stock-span) |
+## Array
+|  |
+| ------- |
+| [0704-binary-search](https://github.com/shashank2004pradhan/DSA-LEETCODE-/tree/master/0704-binary-search) |
+## Binary Search
+|  |
+| ------- |
+| [0704-binary-search](https://github.com/shashank2004pradhan/DSA-LEETCODE-/tree/master/0704-binary-search) |
 <!---LeetCode Topics End-->
