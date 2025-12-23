@@ -1,18 +1,27 @@
 class Solution {
 public:
-    int bs(vector<int>& a, int tar, int st, int e) {
-        if (st > e) return -1; // base case
+    int search(vector<int>& nums, int target) {
+        int n = nums.size();
+        int low = 0;
+        int high = n-1;
 
-        int mid = st + (e - st) / 2;
+        while(low <= high){
+            int mid = (low + high)/2;
 
-        if (a[mid] == tar) return mid;
-        else if (a[mid] < tar) 
-            return bs(a, tar, mid + 1, e);
-        else 
-            return bs(a, tar, st, mid - 1);
+            if (nums[mid] == target){
+                return mid;
+            }
+            else if(nums[mid] < target){
+                low = mid + 1;
+            }
+            else high = mid -1;
+        }
+
+
+
+
+
+
+        return -1;
     }
-
-    int search(vector<int>& a, int tar) {
-        return bs(a, tar, 0, a.size() - 1);
-    }
-};   // \U0001f448 You need this to properly close the class
+};
